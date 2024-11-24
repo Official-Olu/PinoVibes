@@ -1,0 +1,615 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #e5ba75;
+}
+
+
+.icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.icon img {
+    width: 55px;
+    border-radius: 50%;
+}
+
+
+.hero-slider {
+    margin-top: 250px;
+    align-items: center;
+    height: 50%;
+}
+
+.welcome-text {
+    font-size: 48px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.pino-vibes {
+    font-size: 24px;
+    text-align: center;
+    font-style: italic;
+    opacity: 0;
+    animation: slideUp 2s forwards;
+    animation-delay: 1s;
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(15px);
+        opacity: 1;
+    }
+}
+
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.9s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.letter:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.letter:nth-child(2) {
+    animation-delay: 0.9s;
+}
+
+.letter:nth-child(3) {
+    animation-delay: 1.8s;
+}
+
+.letter:nth-child(4) {
+    animation-delay: 2.7s;
+}
+
+.letter:nth-child(5) {
+    animation-delay: 3.6s;
+}
+
+.letter:nth-child(6) {
+    animation-delay: 4.5s;
+}
+
+.letter:nth-child(7) {
+    animation-delay: 5.4s;
+}
+
+.letter:nth-child(8) {
+    animation-delay: 6.3s;
+}
+
+.letter:nth-child(9) {
+    animation-delay: 7.2s;
+}
+
+.letter:nth-child(10) {
+    animation-delay: 8.1s;
+}
+
+.letter:nth-child(11) {
+    animation-delay: 9s;
+}
+
+.letter:nth-child(12) {
+    animation-delay: 9.9s;
+}
+
+.letter:nth-child(13) {
+    animation-delay: 10.8s;
+}
+
+.letter:nth-child(14) {
+    animation-delay: 11.7s;
+}
+
+.letter:nth-child(15) {
+    animation-delay: 12.6s;
+}
+
+.letter:nth-child(16) {
+    animation-delay: 13.5s;
+}
+
+.letter:nth-child(17) {
+    animation-delay: 14.4s;
+}
+
+.letter:nth-child(18) {
+    animation-delay: 15.3s;
+}
+
+.letter:nth-child(19) {
+    animation-delay: 16.2s;
+}
+
+.letter:nth-child(20) {
+    animation-delay: 17.1s;
+}
+
+.letter:nth-child(21) {
+    animation-delay: 18s;
+}
+
+.letter:nth-child(22) {
+    animation-delay: 18.9s;
+}
+
+.button-container {
+    margin-top: 25px;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInButton 1s forwards;
+    animation-delay: 2s;
+}
+
+#pinoButton {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#pinoButton:hover {
+    background-color: #3e2723;
+}
+#pinoButton:focus, .close-btn:focus {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; 
+}
+
+.ticket {
+    background: linear-gradient(to right, #000000, #111111);
+    color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+}
+
+.ticket-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticket .ticket-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.ticket h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.ticket p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.ticket strong {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.ticket .ticket-message {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.ticket .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.ticket .close-btn:hover {
+    color: #ba0404;
+}
+
+
+@media only screen and (max-width: 445px) {
+    body {
+        background-color: #e5ba75;
+    }
+
+    .icon img {
+        width: 52px;
+        border-radius: 50%;
+    }
+
+
+    .hero-slider {
+        margin-top: 300px;
+        height: auto;
+    }
+
+    .welcome-text {
+        font-size: 28px;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .pino-vibes {
+        font-size: 20px;
+        text-align: center;
+        font-style: italic;
+        opacity: 0;
+        animation: slideUp 2s forwards;
+        animation-delay: 1s;
+    }
+
+    .button-container {
+        margin-top: 15px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #pinoButton {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ticket {
+        background: linear-gradient(to right, #000000, #111111);
+        color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        position: relative;
+        width: 80%;
+        max-width: 400px;
+       
+    }
+
+    .ticket h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .ticket p {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .ticket strong {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .ticket .ticket-message {
+        font-size: 14px;
+        font-style: italic;
+        margin-bottom: 15px;
+    }
+
+    .ticket .ticket-image {
+        width: 80px;
+       
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .ticket .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+
+}
+
+@media only screen and (min-width: 445px) and (max-width: 600px) {
+    body {
+        background-color: #e5ba75; /* Retains the background color */
+    }
+
+    .icon img {
+        width: 60px; /* Adjust icon size to fit the screen */
+        border-radius: 50%;
+    }
+
+    .hero-slider {
+        margin-top: 250px; /* Reducing the margin-top for better positioning */
+        height: auto;
+    }
+
+    .welcome-text {
+        font-size: 32px; /* Increase font size for better readability */
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .pino-vibes {
+        font-size: 22px; /* Adjust the font size for this text */
+        text-align: center;
+        font-style: italic;
+        opacity: 0;
+        animation: slideUp 2s forwards;
+        animation-delay: 1s;
+    }
+
+    .button-container {
+        margin-top: 20px; /* Increase the spacing between elements */
+        padding: 12px;
+        text-align: center;
+    }
+
+    #pinoButton {
+        padding: 10px 20px; /* Slightly larger button padding for better tap targets */
+        font-size: 16px; /* Increase font size for readability */
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ticket {
+        background: linear-gradient(to right, #000000, #111111);
+        color: #fff;
+        border-radius: 10px;
+        padding: 25px; /* Slightly more padding for a spacious feel */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        position: relative;
+        width: 85%;
+        max-width: 450px; /* Increase the max-width for the ticket */
+    }
+
+    .ticket h2 {
+        font-size: 26px; /* Increase heading size */
+        margin-bottom: 12px; /* Adjust margin for better spacing */
+    }
+
+    .ticket p {
+        font-size: 18px; /* Slightly larger text for better readability */
+        margin-bottom: 10px;
+    }
+
+    .ticket strong {
+        font-weight: bold;
+        font-size: 20px; /* Increase the strong text size */
+    }
+
+    .ticket .ticket-message {
+        font-size: 16px; /* Increase font size of ticket message */
+        font-style: italic;
+        margin-bottom: 18px;
+    }
+
+    .ticket .ticket-image {
+        width: 100px; /* Larger image size for better visual balance */
+        height: auto;
+        margin-bottom: 12px; /* Adjust margin for spacing */
+    }
+
+    .ticket .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 26px; /* Larger close button for better interaction */
+        font-weight: bold;
+        color: #fff;
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        background-color: #e5ba75; 
+        padding: 10px; 
+        margin: 0; 
+    }
+
+    .icon img {
+        width: 60px; 
+        border-radius: 50%;
+    }
+
+    
+    .hero-slider {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        height: 35vh; 
+        position: relative; 
+        z-index: 1; 
+    }
+
+   
+    .welcome-text {
+        font-size: 40px; 
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+    }
+
+    .pino-vibes {
+        font-size: 30px; 
+        text-align: center;
+        margin-top: 10px; 
+        animation: slideUp 2s forwards;
+        animation-delay: 1s;
+    }
+
+   
+    .button-container {
+        margin-top: 20px; 
+        padding: 10px;
+        text-align: center;
+    }
+
+    #pinoButton {
+        padding: 10px 20px; 
+        font-size: 18px; 
+    }
+
+   
+    .modal {
+        display: none; 
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(0, 0, 0, 0.5); 
+        justify-content: center; 
+        align-items: center; 
+        z-index: 10000; 
+    }
+    
+    .ticket {
+        background: linear-gradient(to right, #000000, #111111);
+        color: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        position: relative;
+        width: 90%;
+        max-width: 500px;
+        z-index: 10001; 
+    }
+
+    .ticket h2 {
+        font-size: 28px; 
+        margin-bottom: 10px;
+    }
+
+    .ticket p {
+        font-size: 18px; 
+        margin-bottom: 8px;
+    }
+
+    .ticket strong {
+        font-size: 20px; 
+    }
+
+    .ticket .ticket-message {
+        font-size: 16px; 
+        margin-bottom: 15px;
+    }
+
+    .ticket .ticket-image {
+        width: 80px; 
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .ticket .close-btn {
+        font-size: 24px; 
+        top: 10px;
+        right: 10px;
+    }
+}
+
